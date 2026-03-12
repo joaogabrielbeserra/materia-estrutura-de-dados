@@ -4,7 +4,7 @@ public class CasoBase {
 
     public static void main(String[] args) {
 
-        int N = 30000;
+        int N = 6;
 
         int vetAleatorio_1[] = new int[N];
         int vetMelhorCaso_1[] = new int[N];
@@ -26,9 +26,6 @@ public class CasoBase {
         int vetMelhorCaso_4[] = vetMelhorCaso_1.clone();
         int vetPiorCaso_4[] = vetPiorCaso_1.clone();
 
-        int vetAleatorio_5[] = vetAleatorio_1.clone();
-        int vetMelhorCaso_5[] = vetMelhorCaso_1.clone();
-        int vetPiorCaso_5[] = vetPiorCaso_1.clone();
 
 
         long inicio, fim, tempoS, tempoMS;
@@ -59,10 +56,10 @@ public class CasoBase {
         tempoS = (fim - inicio) / 1000;
         tempoMS = (fim - inicio) - tempoS * 1000;
         System.out.println("Tempo de ordenacao Pior Caso: " + tempoS + "s" + tempoMS + "ms");
-//        System.out.println("Os 3 Vetores:");
-//        exibirVetor(vetAleatorio_1, N);
-//        exibirVetor(vetMelhorCaso_1, N);
-//        exibirVetor(vetPiorCaso_1, N);
+        System.out.println("Os 3 Vetores:");
+        exibirVetor(vetAleatorio_1, N);
+        exibirVetor(vetMelhorCaso_1, N);
+        exibirVetor(vetPiorCaso_1, N);
 
 
         System.out.println("  ");
@@ -84,7 +81,7 @@ public class CasoBase {
         fim = System.currentTimeMillis();
         tempoS = (fim - inicio) / 1000;
         tempoMS = (fim - inicio) - tempoS * 1000;
-        System.out.println("Tempo de ordenacao(melhorado n-1) Melhor Caso: " + tempoS + "s" + tempoMS + "ms");
+        System.out.println("Tempo de ordenacao(melhorado  n-1) Melhor Caso: " + tempoS + "s" + tempoMS + "ms");
 
         //--- PIOR CASO ---//
         inicio = System.currentTimeMillis();
@@ -92,11 +89,11 @@ public class CasoBase {
         fim = System.currentTimeMillis();
         tempoS = (fim - inicio) / 1000;
         tempoMS = (fim - inicio) - tempoS * 1000;
-        System.out.println("Tempo de ordenacao(melhorado n-1) Pior Caso: " + tempoS + "s" + tempoMS + "ms");
-//        System.out.println("Os 3 Vetores:");
-//        exibirVetor(vetAleatorio_2, N);
-//        exibirVetor(vetMelhorCaso_2, N);
-//        exibirVetor(vetPiorCaso_2, N);
+        System.out.println("Tempo de ordenacao(melhorado  n-1) Pior Caso: " + tempoS + "s" + tempoMS + "ms");
+        System.out.println("Os 3 Vetores:");
+        exibirVetor(vetAleatorio_2, N);
+        exibirVetor(vetMelhorCaso_2, N);
+        exibirVetor(vetPiorCaso_2, N);
 
         System.out.println("");
         //////// Verficando se vetor ja está ordenado ! /////////////////
@@ -107,7 +104,7 @@ public class CasoBase {
         fim = System.currentTimeMillis();
         tempoS = (fim - inicio) / 1000;
         tempoMS = (fim - inicio) - tempoS * 1000;
-        System.out.println("Tempo de ordenacao(melhorado vetor ja ordenado) Aleatorio: " + tempoS + "s" + tempoMS + "ms");
+        System.out.println("Tempo de ordenacao(melhorado ja ord) Aleatorio: " + tempoS + "s" + tempoMS + "ms");
 
         //--- MELHOR CASO ---//
         inicio = System.currentTimeMillis();
@@ -115,7 +112,7 @@ public class CasoBase {
         fim = System.currentTimeMillis();
         tempoS = (fim - inicio) / 1000;
         tempoMS = (fim - inicio) - tempoS * 1000;
-        System.out.println("Tempo de ordenacao(melhorado vetor ja ordenado) Melhor Caso: " + tempoS + "s" + tempoMS + "ms");
+        System.out.println("Tempo de ordenacao(melhorado ja ord) Melhor Caso: " + tempoS + "s" + tempoMS + "ms");
 
         //--- PIOR CASO ---//
         inicio = System.currentTimeMillis();
@@ -123,14 +120,14 @@ public class CasoBase {
         fim = System.currentTimeMillis();
         tempoS = (fim - inicio) / 1000;
         tempoMS = (fim - inicio) - tempoS * 1000;
-        System.out.println("Tempo de ordenacao(melhorado vetor ja ordenado) Pior Caso: " + tempoS + "s" + tempoMS + "ms");
-//        System.out.println("Os 3 Vetores:");
-//        exibirVetor(vetAleatorio_3, N);
-//        exibirVetor(vetMelhorCaso_3, N);
-//        exibirVetor(vetPiorCaso_3, N);
+        System.out.println("Tempo de ordenacao(melhorado ja ord) Pior Caso: " + tempoS + "s" + tempoMS + "ms");
+        System.out.println("Os 3 Vetores:");
+        exibirVetor(vetAleatorio_3, N);
+        exibirVetor(vetMelhorCaso_3, N);
+        exibirVetor(vetPiorCaso_3, N);
 
         System.out.println("");
-        //////// tirando o maior e menor numero ! /////////////////
+        //////// Comendo de fora pra dentro ! /////////////////
 
         //--- ALEATORIO ---//
         inicio = System.currentTimeMillis();
@@ -138,7 +135,7 @@ public class CasoBase {
         fim = System.currentTimeMillis();
         tempoS = (fim - inicio) / 1000;
         tempoMS = (fim - inicio) - tempoS * 1000;
-        System.out.println("Tempo de ordenacao(melhorado tirando maior e menor) Aleatorio: " + tempoS + "s" + tempoMS + "ms");
+        System.out.println("Tempo de ordenacao(melhorado de fora pra dentro) Aleatorio: " + tempoS + "s" + tempoMS + "ms");
 
         //--- MELHOR CASO ---//
         inicio = System.currentTimeMillis();
@@ -146,7 +143,7 @@ public class CasoBase {
         fim = System.currentTimeMillis();
         tempoS = (fim - inicio) / 1000;
         tempoMS = (fim - inicio) - tempoS * 1000;
-        System.out.println("Tempo de ordenacao(melhorado tirando maior e menor) Melhor Caso: " + tempoS + "s" + tempoMS + "ms");
+        System.out.println("Tempo de ordenacao(melhorado de fora pra dentro) Melhor Caso: " + tempoS + "s" + tempoMS + "ms");
 
         //--- PIOR CASO ---//
         inicio = System.currentTimeMillis();
@@ -154,39 +151,11 @@ public class CasoBase {
         fim = System.currentTimeMillis();
         tempoS = (fim - inicio) / 1000;
         tempoMS = (fim - inicio) - tempoS * 1000;
-        System.out.println("Tempo de ordenacao(melhorado tirando maior e menor) Pior Caso: " + tempoS + "s" + tempoMS + "ms");
-//        System.out.println("Os 3 Vetores:");
-//        exibirVetor(vetAleatorio_4, N);
-//        exibirVetor(vetMelhorCaso_4, N);
-//        exibirVetor(vetPiorCaso_4, N);
-
-
-        System.out.println("");
-        //////// com metodo insertion ! /////////////////
-
-        //--- ALEATORIO ---//
-        inicio = System.currentTimeMillis();
-        ordenarComInsertion(vetAleatorio_5, N);
-        fim = System.currentTimeMillis();
-        tempoS = (fim - inicio) / 1000;
-        tempoMS = (fim - inicio) - tempoS * 1000;
-        System.out.println("Tempo de ordenacao(insertion) Aleatorio: " + tempoS + "s" + tempoMS + "ms");
-
-        //--- MELHOR CASO ---//
-        inicio = System.currentTimeMillis();
-        ordenarComInsertion(vetMelhorCaso_5, N);
-        fim = System.currentTimeMillis();
-        tempoS = (fim - inicio) / 1000;
-        tempoMS = (fim - inicio) - tempoS * 1000;
-        System.out.println("Tempo de ordenacao(insertion) Melhor Caso: " + tempoS + "s" + tempoMS + "ms");
-
-        //--- PIOR CASO ---//
-        inicio = System.currentTimeMillis();
-        ordenarComInsertion(vetPiorCaso_5, N);
-        fim = System.currentTimeMillis();
-        tempoS = (fim - inicio) / 1000;
-        tempoMS = (fim - inicio) - tempoS * 1000;
-        System.out.println("Tempo de ordenacao(insertion) Pior Caso: " + tempoS + "s" + tempoMS + "ms");
+        System.out.println("Tempo de ordenacao(melhorado de fora pra dentro) Pior Caso: " + tempoS + "s" + tempoMS + "ms");
+        System.out.println("Os 3 Vetores:");
+        exibirVetor(vetAleatorio_4, N);
+        exibirVetor(vetMelhorCaso_4, N);
+        exibirVetor(vetPiorCaso_4, N);
 
 
 
@@ -254,44 +223,29 @@ public class CasoBase {
                 }
             }
             if(!foiAlterado) return;
-
         }
     }
 
     private static void ordenarMelhoradoOrdenandoComMenorEMaior(int[] vet, int N) {
         for(int i=0; i<N; i++){
+            int menorNumeroEncontrado = 0;
             boolean foiAlterado = false;
-            int menorNumeroEncontrado = N;
-            int indiceDoMenorNumero = -1;
-            for(int j=i; j<N-1-i; j++){
-                if(vet[j]>=vet[j+1]) {
+            for(int j=0; j<N-1-i; j++){
+                if(vet[j]>vet[j+1]) {
+                    if (menorNumeroEncontrado < vet[j+1]) {
+                        menorNumeroEncontrado = vet[j+1];
+                    }
+
                     troca(vet, j, j + 1);
                     foiAlterado = true;
-                }
-                if (vet[j] < menorNumeroEncontrado) {
+                }  else {
                     menorNumeroEncontrado = vet[j];
-                    indiceDoMenorNumero = j;
                 }
+
             }
-            if (indiceDoMenorNumero != i && indiceDoMenorNumero != -1) {
-                int tmp = vet[i];
-                vet[i] = vet[indiceDoMenorNumero];
-                vet[indiceDoMenorNumero] = tmp;
-            }
+            System.out.println(menorNumeroEncontrado);
+
             if(!foiAlterado) return;
-        }
-    }
-
-    private static void ordenarComInsertion(int[] vet, int N) {
-        for (int i = 1; i < N; ++i) {
-            int proximoNumero = vet[i];
-            int atualIndice = i - 1;
-
-            while (atualIndice >= 0 && vet[atualIndice] > proximoNumero) {
-                vet[atualIndice + 1] = vet[atualIndice];
-                atualIndice = atualIndice - 1;
-            }
-            vet[atualIndice + 1] = proximoNumero;
         }
     }
 
