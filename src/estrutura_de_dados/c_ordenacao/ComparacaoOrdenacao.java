@@ -3,7 +3,7 @@ package estrutura_de_dados.c_ordenacao;
 public class ComparacaoOrdenacao {
 
     public static void main(String[] args) {
-        int[] tamanhos = {5000, 10000, 30000, 50000, 100000, 200000};
+        int[] tamanhos = {5000, 10000, 30000, 50000, 100000, 200000, 500000};
 
         for (int N : tamanhos) {
             System.out.println("\n===================================");
