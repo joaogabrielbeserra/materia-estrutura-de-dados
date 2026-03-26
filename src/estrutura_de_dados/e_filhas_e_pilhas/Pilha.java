@@ -1,81 +1,54 @@
 package estrutura_de_dados.e_filhas_e_pilhas;
 
 public class Pilha {
-    private No topo; // topo é o nó de controle da lista o "início" da implementação anterior
-    
-    public Pilha(){
+    private No topo;
+    private int tamanho;
+
+    public Pilha() {
         this.topo = null;
+        this.tamanho = 0;
     }
-    
-    public void empilhar(int x){
+
+    public void empilhar(int x) {
         No novo = new No(x);
-        if (topo == null) {
-                   topo = novo;
-
-                } else if (topo.prox == null) {
-                    topo.prox = novo;
-
-                }    else {
-                    No temp = topo;
-                    No anterior = null;
-                    while (temp != null) {
-                        anterior = temp;
-                        temp = temp.prox;
-                    }
-                    anterior.prox = novo;
-                }
-    }
-    
-    public void desempilhar(){
-        No temp = topo;
-        while (temp.prox != null) {
-            temp = temp.prox;
-        }
-
-        
-    }
-    
-    public int topo(){
-        No temp = topo;
-        while (temp.prox != null) {
-            temp = temp.prox;
-
-        }
-        return temp.valor;
-    }
-    
-    public boolean vazia(){
-        if (topo == null) {
-            return true;
-        }
-        return false;
-    }
-    
-    public int tamanho(){
-        
-        return 0;
-    }
-    
-    public void exibir(){
-        if (topo == null) {
-            System.out.println("A pilha está vazia painho");
-        } else if (topo.prox == null) {
-            System.out.println(topo.valor);
-        }   else   {
-            exibirRecursivoNoFormatoDaPilha(this.topo);
-        }
+        novo.prox = topo; // o  novo nó aponta para quem era o topo
+        topo = novo;      // o topo agora e o novo nó
+        tamanho++;
     }
 
-    private void exibirRecursivoNoFormatoDaPilha(No atual) {
-        if (atual == null) {
+    public int desempilhar() {
+        if (vazia()) throw new RuntimeException("pilha sem nada");
+
+        int valor = topo.valor;
+        topo = topo.prox;
+        tamanho--;
+        return valor;
+    }
+
+    public int topo() {
+        if (vazia()) throw new RuntimeException("pilha sem nada");
+        return topo.valor;
+    }
+
+    public boolean vazia() {
+        return topo == null;
+    }
+
+    public int tamanho() {
+        return this.tamanho;
+    }
+
+    public void exibir() {
+        if (vazia()) {
+            System.out.println("A pilha está vazia, painho");
             return;
         }
-
-        // primeiro chama o próximo (mergulha na pilha)
-        exibirRecursivoNoFormatoDaPilha(atual.prox);
-
-        // na volta da recursão, imprime o valor (ordem inversa)
-        System.out.println(atual.valor);
+        No temp = topo;
+        while (temp != null) {
+            System.out.println("| " + temp.valor + " |");
+            temp = temp.prox;
+        }
+        System.out.println("-------");
     }
 }
 
