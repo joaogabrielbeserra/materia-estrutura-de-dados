@@ -104,6 +104,9 @@ public class AvaliacaoOrdenacao {
         tempoMS = (fim - inicio) - tempoS * 1000;
         System.out.println("Tempo de ordenacao(InsertionSort) Pior Caso: " + tempoS + "s" + tempoMS + "ms");
 
+
+        String s = "oi";
+
     }
 
 
@@ -141,6 +144,9 @@ public class AvaliacaoOrdenacao {
         vet[a] = vet[b];
         vet[b] = aux;
     }
+
+
+
 
     private static void bubleSort(int[] vet, int N) {
         for(int i=0; i<N; i++){
