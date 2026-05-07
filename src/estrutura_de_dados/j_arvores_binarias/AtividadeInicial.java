@@ -7,9 +7,16 @@ public class AtividadeInicial {
 
 
     static void main(String[] args) {
-        inserir(10);
-        exibirTudoEsquerdaPraDireita();
+        inserir(50);
+        inserir(20);
+        inserir(70);
+        inserir(55);
+        inserir(14);
+        inserir(12);
+        inserir(116);
+        inserir(15);
 
+        exibirFolhas(inicio);
 
 
 
@@ -27,18 +34,18 @@ public class AtividadeInicial {
 
             while (!inseriu) {
                 if(temp.valor >= novo.valor) {
-                    if(temp.esquerda == null) {
-                        temp.esquerda = novo;
+                    if(temp.esq == null) {
+                        temp.esq = novo;
                         inseriu = true;
                     } else {
-                        temp = temp.esquerda;
+                        temp = temp.esq;
                     }
                 } else {
-                    if(temp.direita == null) {
-                        temp.direita = novo;
+                    if(temp.dir == null) {
+                        temp.dir = novo;
                         inseriu = true;
                     } else {
-                        temp = temp.direita;
+                        temp = temp.dir;
                     }
                 }
             }
@@ -46,30 +53,62 @@ public class AtividadeInicial {
 
     }
 
-    static void exibirTudoEsquerdaPraDireita() {
+    static void exibir(NoA temp){
+        if(temp != null){
+            exibir(temp.esq);
+            System.out.print(temp.valor + " ");
+            exibir(temp.dir);
+        }
+    }
 
+    static int maior(NoA temp) {
+        do {
+            temp = temp.esq;
+        } while (temp.esq != null);
+        return temp.valor;
+    }
 
+    static int menor(NoA temp) {
+        do {
+            temp = temp.dir;
+        } while (temp.dir != null);
+        return temp.valor;
+    }
 
-
-        if (inicio == null) {
-            System.out.println("arvore vazia");
-        } else if (inicio.esquerda == null && inicio.direita == null) {
-            System.out.println(inicio.valor);
-        } else {
-            NoA temp = inicio;
-            System.out.println(temp.valor);
-
-            while (temp.direita != inicio) {
-                if() {
-                    System.out.println(temp.valor);
-
-
-                }
+    static void exibirFolhas(NoA temp){
+        if(temp != null){
+            if (ehFolha(temp)) {
+                System.out.print(temp.valor + " ");
             }
+            exibirFolhas(temp.esq);
+            exibirFolhas(temp.dir);
+        }
 
-
+    }
+    static int profundidade(NoA temp) {
+        if(temp != null){
+            if(ehFolha(temp))
+                return 0;
+            else{
+                int x = profundidade(temp.esq);
+                int y = profundidade(temp.dir);
+                int r = (x>y)? x : y;
+                return r+1;
             }
         }
+        return -1;
+    }
+
+    static boolean ehFolha(NoA temp) {
+        if((temp.esq == null) && (temp.dir==null))
+            return true;
+        return false;
+    }
+
+    static void insereExclusivo(NoA novo) {
+
+    }
+
 
 
 
